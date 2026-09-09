@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -36,6 +38,34 @@ public class Main {
         list.sort((s1, s2) -> Double.compare(s2.getGpa(), s1.getGpa()));
         for (Student student : list) {
             System.out.println(student);
+        }
+
+        // Tạo một HashMap<Integer, Student> — dùng id của sinh viên làm key
+        HashMap<Integer, Student> studentMap = new HashMap<>();
+
+        // Thêm vào ít nhất 4 sinh viên (có thể tái sử dụng data cũ hoặc data mới)
+        studentMap.put(1, new Student("Long", 1, 3.5));
+        studentMap.put(2, new Student("Diep", 2, 3.7));
+        studentMap.put(3, new Student("Chi", 3, 3.9));
+        studentMap.put(4, new Student("Yen", 4, 3.3));
+
+        // Tra cứu (lookup) 1 sinh viên theo id, in ra thông tin
+        Student studentExample = studentMap.get(1);
+        System.out.println(studentExample);
+
+        // Cập nhật GPA của 1 sinh viên đã có trong map (theo id)
+        studentExample.setGpa(2.5);
+
+        // Kiểm tra xem một id cụ thể có tồn tại trong map hay không, trước khi thao tác với nó (tránh lỗi NullPointerException nếu tra cứu id không tồn tại)
+        if (studentMap.containsKey(5)) {
+            System.out.println("Student with id 5 exists in the map.");
+        } else {
+            System.out.println("Student with id 5 does not exist in the map.");
+        }
+
+        // Duyệt qua toàn bộ map, in ra tất cả sinh viên
+        for (Map.Entry<Integer,Student> entry : studentMap.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
         }
     }
 }

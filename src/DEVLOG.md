@@ -40,3 +40,34 @@ Muc dich: vua la tai lieu on tap, vua la "cau chuyen" ke lai trong phong van.
       dang xu ly de code tong quat hon
 
 ---
+## 2026-09-09 (Thu Tu) - HashMap operations + ly thuyet Week 1
+
+- Muc tieu: Thao tac voi HashMap<Integer, Student> - put, get, update, containsKey, duyet map.
+  Hoan thanh cau hoi ly thuyet Week 1.
+- Da lam: Hoan thanh ca 6 phan thuc hanh HashMap. Tra loi dung ca 4 cau ly thuyet
+  (Big-O tra cuu, so sanh ArrayList/LinkedList, HashMap key trung, Set vs List)
+- Vuong o dau:
+    - Luc dau hieu nguoc: tuong ArrayList nhanh hon khi them/xoa giua danh sach,
+      LinkedList nhanh hon khi truy cap ngau nhien - thuc ra la NGUOC LAI
+      -> Sua lai dung: ArrayList nhanh truy cap (O(1), vung nho lien tuc, tinh thang dia chi),
+      LinkedList nhanh them/xoa giua (O(1) NEU da dung san vi tri, vi chi doi 2 con tro noi)
+    - Nhan ra diem quan trong: de them/xoa theo index cu the, LinkedList van phai duyet
+      tu dau toi vi tri do truoc (O(N)) - nen thuc te khong nhanh hon ArrayList tru khi
+      dang dung san vi tri (vd: dang duyet bang Iterator)
+- Hoc duoc gi:
+    - Reference vs value: object (nhu Student) khi lay ra tu List/Map la THAM CHIEU toi
+      dung object goc trong bo nho, khong phai ban sao - nen sua truc tiep (setGpa) se
+      anh huong ngay ca khi khong put() lai
+    - Map.Entry<K,V>: dai dien cho 1 cap key-value lay ra tu entrySet() cua Map,
+      dung khi can duyet ca key va value cung luc
+    - HashMap tra cuu theo key trung binh la O(1) so voi ArrayList duyet tim la O(N)
+    - HashMap put() voi key da ton tai se GHI DE (overwrite) gia tri cu, khong loi, khong them moi
+    - Set dam bao tinh duy nhat, dung khi can danh sach khong trung lap (vd: id da dang ky)
+    - ArrayList thuong la lua chon mac dinh tot hon LinkedList trong thuc te, vi truy cap
+      theo index pho bien hon nhieu so voi truong hop thuc su tan dung duoc uu the O(1)
+      cua LinkedList khi them/xoa
+
+- Tong ket Week 1: HOAN THANH ca thuc hanh (Student class, ArrayList, HashMap)
+  va ly thuyet, qua 3 buoi lien tiep.
+
+---
