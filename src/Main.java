@@ -67,5 +67,37 @@ public class Main {
         for (Map.Entry<Integer,Student> entry : studentMap.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
+
+        MyStack stack = new MyStack();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+        stack.push(6);
+        stack.push(7);
+        stack.push(8);
+        stack.push(9);
+        stack.push(10);
+        System.out.println("size = " + stack.size());
+        System.out.println(stack.pop());
+        System.out.println("size = " + stack.size());
+        stack.push(12);
+        System.out.println("size = " + stack.size());
+        System.out.println(stack.pop());
+        System.out.println("size = " + stack.size());
+        System.out.println(stack.pop());
+//        System.out.println(stack.peek());
+//        System.out.println(stack.isEmpty());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
     }
 }

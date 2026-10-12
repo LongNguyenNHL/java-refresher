@@ -71,3 +71,29 @@ Muc dich: vua la tai lieu on tap, vua la "cau chuyen" ke lai trong phong van.
   va ly thuyet, qua 3 buoi lien tiep.
 
 ---
+
+## 2026-10-12 (Thu Hai) - Week 2: MyStack (array)
+
+- Muc tieu: Tu cai dat Stack bang array, khong dung collection co san
+- Da lam: Viet xong MyStack bang int[] (push, pop, peek, isEmpty), tu mo rong mang
+  (nhan doi) khi day, nem EmptyStackException khi stack rong
+- Vuong o dau:
+    - Ban dau tra loi Stack la FIFO - sai. Stack la LIFO, FIFO la cua Queue
+    - Ban dau viet MyStack bang cach boc ArrayList co san -> khong dung yeu cau de bai,
+      phai viet lai bang int[] that
+    - Loi dieu kien trong push: dung size > list.length nen khong bao gio mo rong dung luc,
+      gay ArrayIndexOutOfBoundsException o lan push thu 2
+      -> Sua thanh size >= list.length (mang day khi size bang do dai mang)
+      -> Cach tim ra: trace tay tung buoc voi size = 1, list.length = 1
+- Hoc duoc gi:
+    - LIFO (Stack: push/pop cung o dinh) vs FIFO (Queue: them cuoi, lay dau)
+    - Mo rong mang bang cach nhan doi -> trung binh push van O(1); tang tung 1 o
+      thi moi push la O(N). Khoi tao size 1 an toan vi size * 2 khong bao gio bang 0
+    - Dieu kien bien: dieu kien chi dung khi chuong trinh da hong thi khong bao ve duoc gi
+    - Obsolete reference: pop() chi giam size, o mang van giu tham chieu toi object cu
+      nen GC khong don duoc. Voi mang object phai gan null cho o do (luu gia tri vao
+      bien tam truoc khi gan null). Voi int[] thi khong can vi la kieu nguyen thuy
+- Con lai: chay lai test stack rong rieng (pop() ngay khi vua tao) de xac nhan
+  EmptyStackException; MyQueue; bai kiem tra dau ngoac; nang MyStack len Generic <T> o Week 4
+
+---
